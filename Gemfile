@@ -48,3 +48,4 @@ end
 gem 'devise', '~> 4.2'
 gem 'bootstrap-sass', '~> 3.4.0'
 gem 'sassc-rails', '>= 2.0.0'
+gem 'acts_as_votable', '~> 0.10.0'
