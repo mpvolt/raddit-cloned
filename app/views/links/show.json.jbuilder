@@ -1,1 +1,1 @@
-json.partial! "links/link", link: @link
+json.extract! @link, :id, :title, :url, :created_at, :updated_at

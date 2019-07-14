@@ -8,8 +8,8 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '74baed4eff82304f59ddb00e99e040f7002aa55611116662d60d2d243c577db4f23e6705e3013580b14651b124d010ae40e5d30ac59a109a548105736f7f4727'
-  
+  # config.secret_key = '03c84c15f82d4b7eee5b9b998cbd5b419d7fa7d169fbce8d618b9711186db6892e6d12b40a2c8b90fb55fa88b4768627d5f28a71e223f06f08f9903cf5844bd3'
+
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
@@ -114,7 +114,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '3edb1dc9f4406052c665a50a81fe9c1a0605287e9d92c04305a633ad3e1ecc8e069ccbcd8ce49311388763cda7b03611b023d259db4a43a0b6044af1f5cb7121'
+  # config.pepper = '9adc038662c6ff14048ffba3e3ba6997ba84d9b1cb8832d2fbf653270ea49e9611a04a38223940a08781125d15ee67d552ba4505800b4220624f20ac508fcbb9'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -256,8 +256,17 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
-  # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+ config.omniauth :github, '00631282e41f62e55a59', '8a64518a390e18756a67193f198574ad2ab94cb9'
+ config.omniauth :linkedin, '86pqcua8n58guo', 'C2QKh9WvyPqaLmOi'
+ config.omniauth :facebook, '518503695336481', '0aa4518e1b93340559433b67e8fc78be'
+ config.omniauth :google_oauth2, 
+ '97190888385-p47h3c60cr2s1hh4hhbrp94it83ajt63.apps.googleusercontent.com', 
+ "T_ee17VUNRraRsnKfGiMuTWU"
+ 
+ 
+ 
 
+#OmniAuth.config.logger = Rails.logger if Rails.env.development?
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.

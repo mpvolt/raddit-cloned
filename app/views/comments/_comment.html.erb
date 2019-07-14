@@ -1,0 +1,17 @@
+<%= div_for(comment) do %>
+	<div class="comments_wrapper clearfix">
+		<div class="pull-left">
+			<p class="lead"><%= comment.body %></p>
+			<p><small>Submitted by <%= comment.user.try(:email) %></small></p>
+			<% if comment.user == nil -%>
+			<% comment.delete %>
+			<% end %>
+		</div>
+
+		<div class="btn-group pull-right">
+			<% if comment.user == current_user -%>
+				<%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-default" %>
+			<% end %>
+		</div>
+	</div>
+<% end %>
